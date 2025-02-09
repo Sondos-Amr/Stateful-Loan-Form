@@ -2,24 +2,26 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <h1>hello world!</h1>
-      <hr />
-      <LenoForm />
+    <div className="App flex">
+      <div className="container-content flex">
+        <h1> Repuestung a Loan </h1>
+        <hr />
+        <LenoForm />
+      </div>
     </div>
   );
 }
 
 function LenoForm() {
   return (
-    <div className="container-form">
-      <form className="form">
+    <div className="container-form flex">
+      <form className="form flex">
         <label>Name : </label>
-        <input type="text" placeholder="Name" />
+        <input type="text" />
         <label>Phone Number : </label>
-        <input type="phone" placeholder="Phone" />
+        <input type="tel" />
         <label>Age :</label>
-        <input type="number" />
+        <input type="text" />
         <label>Are You an employee ?</label>
         <input type="checkBox" />
         <label>Salary</label>
@@ -28,7 +30,7 @@ function LenoForm() {
           <option>2</option>
           <option>3</option>
         </select>
-        <button>Submit</button>
+        <button className="form-btn">Submit</button>
       </form>
     </div>
   );

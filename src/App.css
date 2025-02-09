@@ -1,0 +1,61 @@
+* {
+  margin: unset;
+  padding: unset;
+  text-decoration: none;
+  list-style: none;
+  color: white;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.App {
+  margin-top: 50px;
+}
+hr {
+  width: 100%;
+}
+h1 {
+  margin-bottom: 10px;
+  margin-bottom: 19px;
+  letter-spacing: 1px;
+}
+label {
+  margin: 11px;
+  text-align: start;
+}
+.container-content {
+  width: 50%;
+  border-radius: 5px;
+  background: #4d5369;
+  padding: 30px;
+}
+.container-form {
+  width: 100%;
+  font-size: 19px;
+}
+input,
+select {
+  width: 100%;
+  margin-bottom: 11px;
+  height: 41px;
+  padding-left: 11px;
+  color: black;
+}
+option {
+  color: black;
+}
+.form {
+  width: 100%;
+}
+.form-btn {
+  background: #385ee8;
+  background-image: none;
+  border: none;
+  border-radius: 5px;
+  margin: 19px;
+  padding: 19px;
+  font-size: 19px;
+}
