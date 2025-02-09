@@ -11,9 +11,9 @@
   align-items: center;
   flex-direction: column;
 }
-.App {
+/* .App {
   margin-top: 50px;
-}
+} */
 hr {
   width: 100%;
 }
@@ -58,4 +58,24 @@ option {
   margin: 19px;
   padding: 19px;
   font-size: 19px;
+}
+
+/* popup  */
+
+.popup-container {
+  background: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup-contant {
+  background: white;
+  padding: 35px;
+  font-size: 19px;
+}
+.popup-container p {
+  color: green;
 }

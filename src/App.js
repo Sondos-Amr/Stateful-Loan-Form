@@ -1,5 +1,5 @@
 import "./App.css";
-
+import Popup from "./Popup";
 function App() {
   return (
     <div className="App flex">
@@ -7,6 +7,7 @@ function App() {
         <h1> Repuestung a Loan </h1>
         <hr />
         <LenoForm />
+        <Popup />
       </div>
     </div>
   );
