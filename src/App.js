@@ -27,7 +27,7 @@ function LenoForm() {
     const { name, checked, type, value } = e.target;
     setFormInput((prev) => ({
       ...prev,
-      [name]: type === "checked" ? checked : value,
+      [name]: type === "checkbox" ? checked : value,
     }));
   }
   const btnDisabled =
