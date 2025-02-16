@@ -21,6 +21,7 @@ function LenoForm() {
     age: "",
     isEmployee: false,
     salary: "",
+    isDisabled: true,
   });
   function handleInputChange(e) {
     const { name, checked, type, value } = e.target;
@@ -29,9 +30,12 @@ function LenoForm() {
       [name]: type === "checked" ? checked : value,
     }));
   }
-  const [isDisabled, setDisable] = useState(true);
+  const btnDisabled =
+    formInput.name.trim() === "" ||
+    formInput.tel.trim() === "" ||
+    formInput.age.trim() === "";
   return (
-    <div className="container-form flex">
+    <div className="container-form flex" onSubmit={(e) => e.preventDefault()}>
       <form className="form flex">
         <label>Name : </label>
         <input
@@ -73,7 +77,10 @@ function LenoForm() {
           <option>$2000</option>
           <option>$3000</option>
         </select>
-        <button className="form-btn" disabled={(e) => setDisable(!isDisabled)}>
+        <button
+          className={btnDisabled ? "disabled" : "form-btn"}
+          disabled={btnDisabled}
+        >
           Submit
         </button>
       </form>

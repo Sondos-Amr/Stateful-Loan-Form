@@ -52,7 +52,6 @@ option {
 }
 .form-btn {
   background: #385ee8;
-  background-image: none;
   border: none;
   border-radius: 5px;
   margin: 19px;
@@ -78,4 +77,13 @@ option {
 }
 .popup-container p {
   color: green;
+}
+/* btn disabled */
+.disabled {
+  background: gray !important;
+  border: none;
+  border-radius: 5px;
+  margin: 19px;
+  padding: 19px;
+  font-size: 19px;
 }
