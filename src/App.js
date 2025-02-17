@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-// import Popup from "./Popup";
+import Popup from "./Popup";
 function App() {
   return (
     <div className="App flex">
@@ -8,7 +8,6 @@ function App() {
         <h1> Repuestung a Loan </h1>
         <hr />
         <LenoForm />
-        {/* <Popup /> */}
       </div>
     </div>
   );
@@ -34,6 +33,8 @@ function LenoForm() {
     formInput.name.trim() === "" ||
     formInput.tel.trim() === "" ||
     formInput.age.trim() === "";
+
+  const [isVisiable, setIsVisiable] = useState(false);
   return (
     <div className="container-form flex" onSubmit={(e) => e.preventDefault()}>
       <form className="form flex">
@@ -80,10 +81,12 @@ function LenoForm() {
         <button
           className={btnDisabled ? "disabled" : "form-btn"}
           disabled={btnDisabled}
+          onClick={() => setIsVisiable(true)}
         >
           Submit
         </button>
       </form>
+      <Popup isVisiable={isVisiable} />
     </div>
   );
 }
