@@ -1,19 +1,26 @@
 import { useState } from "react";
 import "./App.css";
 import Popup from "./Popup";
+
 function App() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  function handleDevClick() {
+    setIsVisible(!isVisible);
+  }
+
   return (
-    <div className="App flex">
+    <div className="App flex" onClick={handleDevClick}>
       <div className="container-content flex">
         <h1> Repuestung a Loan </h1>
         <hr />
-        <LenoForm />
+        <LenoForm setIsVisible={setIsVisible} isVisible={isVisible} />
       </div>
     </div>
   );
 }
 
-function LenoForm() {
+function LenoForm({ setIsVisible, isVisible }) {
   const [formInput, setFormInput] = useState({
     name: "",
     tel: "",
@@ -22,6 +29,7 @@ function LenoForm() {
     salary: "",
     isDisabled: true,
   });
+
   function handleInputChange(e) {
     const { name, checked, type, value } = e.target;
     setFormInput((prev) => ({
@@ -29,12 +37,12 @@ function LenoForm() {
       [name]: type === "checkbox" ? checked : value,
     }));
   }
+
   const btnDisabled =
     formInput.name.trim() === "" ||
     formInput.tel.trim() === "" ||
     formInput.age.trim() === "";
 
-  const [isVisiable, setIsVisiable] = useState(false);
   return (
     <div className="container-form flex" onSubmit={(e) => e.preventDefault()}>
       <form className="form flex">
@@ -81,12 +89,12 @@ function LenoForm() {
         <button
           className={btnDisabled ? "disabled" : "form-btn"}
           disabled={btnDisabled}
-          onClick={() => setIsVisiable(true)}
+          onClick={() => setIsVisible(true)}
         >
           Submit
         </button>
       </form>
-      <Popup isVisiable={isVisiable} />
+      <Popup isVisible={isVisible} />
     </div>
   );
 }
