@@ -6,7 +6,9 @@ function App() {
   const [isVisible, setIsVisible] = useState(false);
 
   function handleDevClick() {
-    setIsVisible(!isVisible);
+    if (isVisible) {
+      setIsVisible(false);
+    }
   }
 
   return (
@@ -42,6 +44,15 @@ function LenoForm({ setIsVisible, isVisible }) {
     formInput.name.trim() === "" ||
     formInput.tel.trim() === "" ||
     formInput.age.trim() === "";
+
+  const [errorMessage, setErrorMessage] = useState(null);
+  function handleSubmitClick() {
+    setIsVisible(true);
+    const { age } = formInput;
+    if (age < 18 || age > 100) {
+      setErrorMessage("The age is not allowed");
+    }
+  }
 
   return (
     <div className="container-form flex" onSubmit={(e) => e.preventDefault()}>
@@ -89,12 +100,12 @@ function LenoForm({ setIsVisible, isVisible }) {
         <button
           className={btnDisabled ? "disabled" : "form-btn"}
           disabled={btnDisabled}
-          onClick={() => setIsVisible(true)}
+          onClick={handleSubmitClick}
         >
           Submit
         </button>
       </form>
-      <Popup isVisible={isVisible} />
+      <Popup isVisible={isVisible} errorMessage={errorMessage} />
     </div>
   );
 }

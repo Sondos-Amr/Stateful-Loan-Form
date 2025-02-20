@@ -1,8 +1,12 @@
-export default function Popup({ isVisiable }) {
+export default function Popup({ isVisiable, errorMessage }) {
   return isVisiable ? (
     <div className="popup-container">
       <div className="popup-content">
-        <p>The Form Has Been Submitted Successfully</p>
+        <p>
+          {errorMessage != null
+            ? errorMessage
+            : " The Form Has Been Submitted Successfully "}
+        </p>
       </div>
     </div>
   ) : null;
